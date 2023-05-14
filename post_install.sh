@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo " - Install exiftool"
+# Install ExifTool
+#echo " - Install exiftool"
 fetch https://exiftool.org/Image-ExifTool-12.62.tar.gz
 tar -xf Image-ExifTool-12.62.tar.gz
 cd Image-ExifTool-12.62
@@ -38,11 +39,13 @@ ADMIN_PASSWORD=`cat /root/admin_password`
 # Create user and database for PhotoPrism
 DB_USER="photoview"
 DB="photoview"
+
 # Save the config values
 echo "$DB" > /root/db_name
 echo "$DB_USER" > /root/db_user
-echo "Database User: $DB_USER"
-echo "Database Password: $DB_PASSWORD"
+#echo "Database User: $DB_USER"
+#echo "Database Password: $DB_PASSWORD"
+
 mysql --user=root <<_EOF_
 CREATE DATABASE ${DB}
 CHARACTER SET = 'utf8mb4'
@@ -56,23 +59,31 @@ _EOF_
 git clone https://github.com/photoview/photoview.git
 cd photoview
 git checkout 228f2cc1e7b2c9079fa81363c49c9c4d60a5cccd
+
 #echo " -Build backend"
 cd api
+
 #echo " -Fetching dependencies"
 go get .
+
 #echo " -Applying patches"
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/classify.cc
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/facerec.cc
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/jpeg_mem_loader.cc
 sed -i -e 's|#include <jpeglib.h>|#include </usr/local/include/jpeglib.h>|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/jpeg_mem_loader.cc
-echo " -Compiling backend"
+
+#echo " -Compiling backend"
 go build -v -o photoview .
+
 #echo " -Build frontend"
 cd ~/photoview/ui
+
 #echo " -Fetching dependencies"
 npm install
+
 #echo " -Building frontend"
 npm run build
+
 #echo " -Installing photoview"
 cd ~
 # create app dir
