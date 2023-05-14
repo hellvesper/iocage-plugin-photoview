@@ -1,3 +1,4 @@
 {
-    "adminportal": "http://%%IP%%:4001"
+    "adminportal": "http://%%IP%%",
+    "docurl": "https://photoview.github.io"
 }
