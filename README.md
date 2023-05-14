@@ -16,7 +16,11 @@ Source: https://github.com/photoview/photoview
 
 This plugin uses full install with optional features of Photoview, it additionaly installed `ffmpeg` to convert unsupported videos, and `darktable` for RAW photos formats, it also installed ExifTool to fetch metadata from media files.
 
-The installation also configure mDNS service, so you can acces service in your local network by local domains names in `.local` zone. Default domain name will be http://photoview.local .
+The installation also configure `mDNS` service, so you can acces service in your `local network` by local domains names in `.local` zone.
+
+Default domain name will be http://photoview.local .
+
+Note: Android devices doesn't support `mDNS` service, you can still access by `IP` in Plugins -> Photoveiw -> kebab menu -> MANAGE
 
 If you have more than 1 instanse installed or jail with same name your domain name will be like `photociew-x.local`, where x - is number 1-n. To find out which hostname had installed service go to TrueNAS admin panel → Jails.
 
