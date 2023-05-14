@@ -137,6 +137,11 @@ chmod +x /usr/local/etc/rc.d/photoview
 
 # enable photoview daemon
 sysrc photoview_enable=YES
-
+# enable dbus daemon
+sysrc dbus_enable=YES
+# enable avahi daemon
+sysrc avahi_daemon_enable=YES
 # start photoview
 service photoview start
+service dbus start
+service avahi-daemon start
