@@ -5,8 +5,11 @@ Photoview gallery plugin for TrueNAS
 Photoview is a simple and user-friendly photo gallery that's made for photographers and aims to provide an easy and fast way to navigate directories, with thousands of high-resolution photos.
 
 Site: https://photoview.github.io
+
 Demo: https://photos.qpqp.dk/
+
 Docs: https://photoview.github.io/en/docs/
+
 Source: https://github.com/photoview/photoview
 
 ## About plugin
