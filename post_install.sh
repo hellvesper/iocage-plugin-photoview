@@ -111,6 +111,10 @@ chown -R photoview:photoview /var/log/photoview
 tee photoview_rc <<_EOF_
 #!/bin/sh
 
+# PROVIDE: photoview
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
 . /etc/rc.subr
 
 name="photoview"
