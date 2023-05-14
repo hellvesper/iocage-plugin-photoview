@@ -135,4 +135,3 @@ sysrc photoview_enable=YES
 
 # start photoview
 service photoview start
-#su - photoview -c 'cd /usr/home/photoview/photoview_app && /usr/home/photoview/photoview_app/photoview'
