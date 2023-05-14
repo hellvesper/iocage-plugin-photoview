@@ -20,7 +20,7 @@ The installation also configure `mDNS` service, so you can acces service in your
 
 Default domain name will be http://photoview.local .
 
-Note: Android devices doesn't support `mDNS` service, you can still access by `IP` in Plugins -> Photoveiw -> kebab menu -> MANAGE
+Note: Android devices doesn't support `mDNS` service, you can still access by `IP` in Plugins -> Photoview -> kebab menu -> MANAGE
 
 If you have more than 1 instanse installed or jail with same name your domain name will be like `photociew-x.local`, where x - is number 1-n. To find out which hostname had installed service go to TrueNAS admin panel → Jails.
 
