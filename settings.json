@@ -1,0 +1,25 @@
+{
+    "servicerestart":"service photoview restart",
+    "serviceget": "/usr/local/bin/photoviewget",
+    "serviceset": "/usr/local/bin/photoviewset",
+    "options": {
+        "dbname": {
+            "type": "string",
+            "name": "Database Name",
+            "description": "Database to use for Photoview setup",
+            "readonly": true
+        },
+        "dbuser": {
+            "type": "string",
+            "name": "Database Username",
+            "description": "Username to use for Photoview Database setup",
+            "readonly": true
+        },
+        "dbpassword": {
+            "type": "string",
+            "name": "Database Password",
+            "description": "Password to use for Photoview Database setup",
+            "readonly": true
+        }
+    }
+}
