@@ -94,7 +94,7 @@ sed -i -e "s|PHOTOVIEW_DEVELOPMENT_MODE=1|PHOTOVIEW_DEVELOPMENT_MODE=0|g" /root/
 sed -i -e "s|PHOTOVIEW_SERVE_UI=0|PHOTOVIEW_SERVE_UI=1|g" /root/photoview_app/.env
 sed -i -e "s|//localhost|//$IP4_ADDR|g" /root/photoview_app/.env
 sed -i -e "s|=localhost|=$IP4_ADDR|g" /root/photoview_app/.env
-sed -i -e "s|4001|4001|g" /root/photoview_app/.env
+sed -i -e "s|4001|80|g" /root/photoview_app/.env
 
 # create photoview user
 pw group add -n photoview -g 1000
