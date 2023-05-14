@@ -52,28 +52,28 @@ GRANT ALL PRIVILEGES ON ${DB}.* to '${DB_USER}'@'%';
 FLUSH PRIVILEGES;
 _EOF_
 
-echo " -Install Photoview"
+#echo " -Install Photoview"
 git clone https://github.com/photoview/photoview.git
 cd photoview
 git checkout 228f2cc1e7b2c9079fa81363c49c9c4d60a5cccd
-echo " -Build backend"
+#echo " -Build backend"
 cd api
-echo " -Fetching dependencies"
+#echo " -Fetching dependencies"
 go get .
-echo " -Applying patches"
+#echo " -Applying patches"
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/classify.cc
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/facerec.cc
 sed -i -e 's|#include <dlib|#include </usr/local/include/dlib|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/jpeg_mem_loader.cc
 sed -i -e 's|#include <jpeglib.h>|#include </usr/local/include/jpeglib.h>|g' ~/go/pkg/mod/github.com/\!kagami/go-face@v0.0.0-20210630145111-0c14797b4d0e/jpeg_mem_loader.cc
 echo " -Compiling backend"
 go build -v -o photoview .
-echo " -Build frontend"
+#echo " -Build frontend"
 cd ~/photoview/ui
-echo " -Fetching dependencies"
+#echo " -Fetching dependencies"
 npm install
-echo " -Building frontend"
+#echo " -Building frontend"
 npm run build
-echo " -Installing photoview"
+#echo " -Installing photoview"
 cd ~
 # create app dir
 mkdir photoview_app
