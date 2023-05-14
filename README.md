@@ -20,7 +20,7 @@ The installation also configure mDNS service, so you can acces service in your l
 
 If you have more than 1 instanse installed or jail with same name your domain name will be like `photociew-x.local`, where x - is number 1-n. To find out which hostname had installed service go to TrueNAS admin panel → Jails.
 
-### Add existing share to Gallery.
+## Add existing share to Gallery.
 
 After pluging installed, you should add mount point to it.
 * Go to TrueNAS → Jails
@@ -32,7 +32,7 @@ After pluging installed, you should add mount point to it.
 
 That it. Now open photoview in your browser and if you didn't create an account yet, you will be promted for new user. Enter yout login, password, and a path to directory (`Destination`), if you choosed `/mnt` or `/media` - enter `/mnt` or `/media`
 
-### Install plugin from this repository instead of Community Hub
+## Install plugin from this repository instead of Community Hub
 
 You can install this plugin manually directly from this repository.
 To do this navigate to TrueNAS → Shell, and enter command: `iocage fetch -P photoview -g https://github.com/hellvesper/iocage-plugin-index`
